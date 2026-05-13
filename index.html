@@ -510,6 +510,96 @@
     margin-bottom: 14px;
   }
 
+  /* emergencies & safety */
+  .safety-wrap {
+    background: var(--charcoal);
+    padding: 100px 72px;
+  }
+  .safety-head {
+    max-width: 1400px;
+    margin: 0 auto 64px;
+    display: grid;
+    grid-template-columns: minmax(0,1.4fr) minmax(0,1fr);
+    gap: 80px;
+    align-items: end;
+  }
+  .safety-intro {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.75;
+    color: rgba(200,191,176,0.7);
+    margin: 0;
+  }
+  .safety-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: rgba(200,191,176,0.15);
+  }
+  .safety-item {
+    background: var(--charcoal);
+    padding: 44px 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  .safety-eyebrow {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 18px;
+  }
+  .safety-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(247,244,239,0.78);
+    margin: 0;
+  }
+  .safety-list {
+    list-style: none;
+    padding: 0;
+    margin: 14px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .safety-list li {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.25;
+    padding-left: 22px;
+    position: relative;
+  }
+  .safety-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 12px;
+    height: 1px;
+    background: var(--blue-light);
+  }
+  .safety-item--emergency { align-items: flex-start; }
+  .safety-number {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(72px, 9vw, 132px);
+    line-height: 1;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    margin: 6px 0 18px;
+    display: block;
+    transition: color 0.2s;
+  }
+  .safety-number:hover { color: var(--blue-light); }
+
   /* map section */
   .map-section {
     background: var(--charcoal);
@@ -682,6 +772,10 @@
     .split { grid-template-columns: 1fr; }
     .split-content { padding: 52px 32px; }
     .rules-wrap { padding: 60px 32px; }
+    .safety-wrap { padding: 64px 32px; }
+    .safety-head { grid-template-columns: 1fr; gap: 20px; margin-bottom: 40px; align-items: start; }
+    .safety-grid { grid-template-columns: 1fr; gap: 1px; }
+    .safety-item { padding: 36px 32px; }
     .map-section { padding: 72px 32px; }
     .map-header { grid-template-columns: 1fr; gap: 40px; }
     .contact-section { grid-template-columns: 1fr; padding: 60px 32px; gap: 48px; }
@@ -750,6 +844,7 @@
     <li><a href="#apartment" data-i18n="nav.suite">Your Suite</a></li>
     <li><a href="#wellness" data-i18n="nav.wellness">Wellness</a></li>
     <li><a href="#house-rules" data-i18n="nav.rules">House Rules</a></li>
+    <li><a href="#safety" data-i18n="nav.safety">Safety</a></li>
     <li><a href="#contact" data-i18n="nav.contactLink">Contact</a></li>
   </ul>
   <div class="lang-switcher" role="group" aria-label="Language">
@@ -1069,7 +1164,7 @@
       <div class="rule-item">
         <div class="rule-divider"></div>
         <div class="rule-title" data-i18n="rules.wasteT">Waste &amp; Recycling</div>
-        <div class="rule-body" data-i18n="rules.wasteB">South Tyrol takes recycling seriously. Plastics, glass, and paper belong in the recycling containers in the garage. General household waste and organic waste go in the bins outside the front entrance.</div>
+        <div class="rule-body" data-i18n="rules.wasteB">South Tyrol takes recycling seriously. Plastics, glass, and paper belong in the recycling containers in the garage. General household waste and organic waste go in the bins outside the front entrance. Both locations are indicated on the building map above.</div>
       </div>
       <div class="rule-item">
         <div class="rule-divider"></div>
@@ -1095,6 +1190,35 @@
         <div class="rule-divider"></div>
         <div class="rule-title" data-i18n="rules.cleanT">Interim Cleaning</div>
         <div class="rule-body" data-i18n="rules.cleanB">For stays of 11 days or more, interim cleaning and fresh towels are available upon request. Please contact us to arrange a convenient time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCIES & SAFETY -->
+<section id="safety">
+  <div class="safety-wrap">
+    <div class="safety-head">
+      <h2 class="rules-heading" style="color:var(--white); margin-bottom:0;" data-i18n="safety.heading" data-i18n-html="1">Emergencies<br><em style="font-family:var(--serif); font-style:italic; color:var(--cream);">&amp; Safety</em></h2>
+      <p class="safety-intro" data-i18n="safety.intro">Two essential precautions and the number to call if something ever goes wrong.</p>
+    </div>
+    <div class="safety-grid">
+      <div class="safety-item">
+        <div class="safety-eyebrow" data-i18n="safety.wardrobeT">In your wardrobe</div>
+        <p class="safety-body" data-i18n="safety.wardrobeB">You will find the following useful items in the wardrobe of your apartment:</p>
+        <ul class="safety-list">
+          <li data-i18n="safety.wardrobeL1">Fire extinguisher</li>
+          <li data-i18n="safety.wardrobeL2">First aid kit</li>
+        </ul>
+      </div>
+      <div class="safety-item">
+        <div class="safety-eyebrow" data-i18n="safety.fireT">In case of fire</div>
+        <p class="safety-body" data-i18n="safety.fireB">Please do not use the elevator. Leave the building via the stairwells.</p>
+      </div>
+      <div class="safety-item safety-item--emergency">
+        <div class="safety-eyebrow" data-i18n="safety.callT">Emergency number</div>
+        <a class="safety-number" href="tel:112" aria-label="Call 112">112</a>
+        <p class="safety-body" data-i18n="safety.callB">European emergency line — police, fire, ambulance.</p>
       </div>
     </div>
   </div>
@@ -1172,7 +1296,7 @@
   const I18N = {
     en: {}, // English is the source — keys read original DOM
     de: {
-      "nav.contact":"Kontakt","nav.arrival":"Anreise","nav.access":"Zugang","nav.suite":"Ihre Suite","nav.wellness":"Wellness","nav.rules":"Hausordnung","nav.contactLink":"Kontakt",
+      "nav.contact":"Kontakt","nav.arrival":"Anreise","nav.access":"Zugang","nav.suite":"Ihre Suite","nav.wellness":"Wellness","nav.rules":"Hausordnung","nav.safety":"Sicherheit","nav.contactLink":"Kontakt",
       "hero.eyebrow":"Weisslahn 9 · Tiers · Dolomiten",
       "hero.title":"Willkommen im<br><em>Florisa</em>",
       "hero.sub":"Es freut uns sehr, Sie bei uns begrüßen zu dürfen. Machen Sie es sich gemütlich, genießen Sie die besondere Atmosphäre des Chalets und lassen Sie den Alltag hinter sich.",
@@ -1222,12 +1346,22 @@
       "rules.heading":"Haus<br><em style=\"font-family:var(--serif); font-style:italic;\">ordnung</em>",
       "rules.quietT":"Ruhezeiten","rules.quietB":"Bitte beachten Sie die Ruhezeiten von <strong>22:00 bis 7:00 Uhr</strong>. Laute Musik und geräuschvolle Aktivitäten sind während dieser Zeiten nicht gestattet. Feiern bedürfen der vorherigen schriftlichen Genehmigung.",
       "rules.smokeT":"Rauchen","rules.smokeB":"Rauchen — einschließlich E-Zigaretten und Vaping — ist im Gebäude nicht gestattet. Auf Ihrem privaten Balkon oder Ihrer Terrasse dürfen Sie gerne rauchen.",
-      "rules.wasteT":"Müll &amp; Recycling","rules.wasteB":"Südtirol nimmt Recycling ernst. Plastik, Glas und Papier gehören in die Recyclingbehälter in der Garage. Restmüll und Bioabfall kommen in die Behälter vor dem Haupteingang.",
+      "rules.wasteT":"Müll &amp; Recycling","rules.wasteB":"Südtirol nimmt Recycling ernst. Plastik, Glas und Papier gehören in die Recyclingbehälter in der Garage. Restmüll und Bioabfall kommen in die Behälter vor dem Haupteingang. Beide Standorte sind in der Gebäudeübersicht oben eingezeichnet.",
       "rules.photoT":"Fotografie","rules.photoB":"Private Fotografie ist willkommen. Kommerzielle Fotografie und Filmaufnahmen auf dem Gelände erfordern unsere vorherige schriftliche Zustimmung. Bitte respektieren Sie stets die Privatsphäre der anderen Gäste.",
       "rules.guestsT":"Gäste &amp; Besucher","rules.guestsB":"Bitte informieren Sie uns im Voraus über Übernachtungsgäste. Alle Gäste müssen gemäß gesetzlicher Vorgaben bei den Behörden gemeldet werden. Die maximale Belegung pro Suite darf nicht überschritten werden.",
       "rules.petsT":"Haustiere","rules.petsB":"Andere Haustiere als Hunde sind nicht gestattet. Hunde sind in ausgewiesenen Suiten nach vorheriger Anmeldung willkommen. Ein gesonderter Hunde-Knigge wird bereitgestellt. Hunde sind im Außenpoolbereich nicht erlaubt.",
       "rules.damageT":"Schäden","rules.damageB":"Bitte gehen Sie sorgsam mit der Einrichtung um. Sollten Schäden entstehen, melden Sie diese bitte umgehend per WhatsApp, möglichst mit Foto. Gäste haften für während ihres Aufenthalts entstandene Schäden.",
       "rules.cleanT":"Zwischenreinigung","rules.cleanB":"Für Aufenthalte ab 11 Tagen sind Zwischenreinigung und frische Handtücher auf Anfrage verfügbar. Bitte kontaktieren Sie uns, um einen passenden Termin zu vereinbaren.",
+      "safety.heading":"Notfälle<br><em style=\"font-family:var(--serif); font-style:italic; color:var(--cream);\">&amp; Sicherheit</em>",
+      "safety.intro":"Zwei wichtige Vorkehrungen — und die Nummer, die Sie wählen, wenn doch einmal etwas geschieht.",
+      "safety.wardrobeT":"In Ihrem Schrank",
+      "safety.wardrobeB":"Im Schrank Ihres Apartments finden Sie folgende nützliche Gegenstände:",
+      "safety.wardrobeL1":"Feuerlöscher",
+      "safety.wardrobeL2":"Erste-Hilfe-Set",
+      "safety.fireT":"Im Brandfall",
+      "safety.fireB":"Benutzen Sie bitte nicht den Aufzug. Verlassen Sie das Gebäude über die Treppenhäuser.",
+      "safety.callT":"Notrufnummer",
+      "safety.callB":"Europäische Notrufnummer — Polizei, Feuerwehr, Rettungsdienst.",
       "quote.text":"„Wir wünschen Ihnen einen tief erholsamen Aufenthalt und unvergessliche Momente in den Dolomiten.\"",
       "quote.source":"Ihr FMC-Team",
       "contact.email":"E-Mail","contact.whatsapp":"WhatsApp","contact.emergency":"Notruf",
@@ -1235,7 +1369,7 @@
       "footer.note":"Keine Rezeption oder Concierge-Service vor Ort"
     },
     it: {
-      "nav.contact":"Contatti","nav.arrival":"Arrivo","nav.access":"Accesso","nav.suite":"La tua suite","nav.wellness":"Benessere","nav.rules":"Regolamento","nav.contactLink":"Contatti",
+      "nav.contact":"Contatti","nav.arrival":"Arrivo","nav.access":"Accesso","nav.suite":"La tua suite","nav.wellness":"Benessere","nav.rules":"Regolamento","nav.safety":"Sicurezza","nav.contactLink":"Contatti",
       "hero.eyebrow":"Weisslahn 9 · Tires · Dolomiti",
       "hero.title":"Benvenuti al<br><em>Florisa</em>",
       "hero.sub":"È un piacere accogliervi. Mettetevi comodi, godetevi l'atmosfera speciale dello chalet e lasciatevi alle spalle la quotidianità.",
@@ -1285,12 +1419,22 @@
       "rules.heading":"Regole<br><em style=\"font-family:var(--serif); font-style:italic;\">della casa</em>",
       "rules.quietT":"Orari di silenzio","rules.quietB":"Vi preghiamo di rispettare gli orari di silenzio dalle <strong>22:00 alle 7:00</strong>. Musica ad alto volume e attività rumorose non sono permesse in questi orari. Le feste richiedono autorizzazione scritta anticipata.",
       "rules.smokeT":"Fumo","rules.smokeB":"Fumare — comprese sigarette elettroniche e svapo — non è consentito all'interno dell'edificio. Potete fumare sul vostro balcone o terrazza privata.",
-      "rules.wasteT":"Rifiuti e riciclo","rules.wasteB":"L'Alto Adige prende sul serio il riciclo. Plastica, vetro e carta vanno nei contenitori per la raccolta differenziata in garage. Rifiuti generici e organici vanno nei bidoni davanti all'ingresso principale.",
+      "rules.wasteT":"Rifiuti e riciclo","rules.wasteB":"L'Alto Adige prende sul serio il riciclo. Plastica, vetro e carta vanno nei contenitori per la raccolta differenziata in garage. Rifiuti generici e organici vanno nei bidoni davanti all'ingresso principale. Entrambe le posizioni sono indicate sulla pianta dell'edificio sopra.",
       "rules.photoT":"Fotografia","rules.photoB":"La fotografia personale è benvenuta. Fotografia commerciale e riprese sul posto richiedono il nostro consenso scritto preventivo. Vi preghiamo di rispettare sempre la privacy degli altri ospiti.",
       "rules.guestsT":"Ospiti e visitatori","rules.guestsB":"Vi preghiamo di informarci in anticipo di eventuali ospiti per la notte. Tutti gli ospiti devono essere registrati presso le autorità locali come previsto dalla legge. La capienza massima per suite non può essere superata.",
       "rules.petsT":"Animali","rules.petsB":"Animali diversi dai cani non sono ammessi. I cani sono benvenuti in suite designate previa comunicazione. Sarà fornita una guida separata sull'etichetta del soggiorno con il cane. I cani non sono ammessi nell'area piscina esterna.",
       "rules.damageT":"Danni","rules.damageB":"Vi preghiamo di trattare gli arredi con cura. In caso di danni, comunicateli immediatamente via WhatsApp, possibilmente con foto. Gli ospiti sono responsabili dei danni causati durante il soggiorno.",
       "rules.cleanT":"Pulizia intermedia","rules.cleanB":"Per soggiorni di 11 giorni o più, sono disponibili pulizia intermedia e cambio asciugamani su richiesta. Contattateci per concordare un orario.",
+      "safety.heading":"Emergenze<br><em style=\"font-family:var(--serif); font-style:italic; color:var(--cream);\">e sicurezza</em>",
+      "safety.intro":"Due precauzioni essenziali — e il numero da chiamare se qualcosa dovesse andare storto.",
+      "safety.wardrobeT":"Nel vostro armadio",
+      "safety.wardrobeB":"Nell'armadio del vostro appartamento troverete i seguenti articoli utili:",
+      "safety.wardrobeL1":"Estintore",
+      "safety.wardrobeL2":"Kit di pronto soccorso",
+      "safety.fireT":"In caso di incendio",
+      "safety.fireB":"Non utilizzate l'ascensore. Lasciate l'edificio attraverso le scale.",
+      "safety.callT":"Numero d'emergenza",
+      "safety.callB":"Numero unico europeo — polizia, vigili del fuoco, ambulanza.",
       "quote.text":"«Vi auguriamo un soggiorno profondamente rigenerante e momenti indimenticabili nelle Dolomiti.»",
       "quote.source":"Il vostro team FMC",
       "contact.email":"Email","contact.whatsapp":"WhatsApp","contact.emergency":"Emergenza",
